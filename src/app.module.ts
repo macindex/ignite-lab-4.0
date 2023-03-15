@@ -1,3 +1,4 @@
+import { PrismaService } from './prisma.service';
 import { PostmarkMailService } from './mail/postmark-mail.service';
 import { HttpModule } from './http.module';
 import { SMTPMailService } from './mail/smtp-mail.service';
@@ -12,6 +13,7 @@ import { MailService } from './mail/mail.service';
   ],
   controllers: [AppController],
   providers: [
+    PrismaService,
     {
       provide: MailService,
       useClass: PostmarkMailService,
