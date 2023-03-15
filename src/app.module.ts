@@ -1,3 +1,4 @@
+import { PostmarkMailService } from './mail/postmark-mail.service';
 import { HttpModule } from './http.module';
 import { SMTPMailService } from './mail/smtp-mail.service';
 import { Module } from '@nestjs/common';
@@ -13,7 +14,7 @@ import { MailService } from './mail/mail.service';
   providers: [
     {
       provide: MailService,
-      useClass: SMTPMailService,
+      useClass: PostmarkMailService,
     }
   ],
 })
